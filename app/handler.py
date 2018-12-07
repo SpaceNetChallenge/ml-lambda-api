@@ -14,7 +14,7 @@ from rio_tiler.utils import (array_to_img,
 
 from lambda_proxy.proxy import API
 
-APP = API(app_name="lambda-tiler")
+APP = API(app_name="ml-lambda-api")
 
 
 @APP.route('/bounds', methods=['GET'], cors=True)
