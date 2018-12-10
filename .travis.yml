@@ -23,6 +23,7 @@ install:
   - source activate ml-export
   - conda install -c conda-forge pytest nodejs requests numpy
   - source activate ml-export & npm install -g serverless
+  - source activate ml-export & make all
   - source activate ml-export & npm install
   - source activate ml-export & sls deploy --stage test
 
