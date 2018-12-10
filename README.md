@@ -28,6 +28,8 @@ make all
 
 ```bash
 #configure serverless (https://serverless.com/framework/docs/providers/aws/guide/credentials/)
+# Create account with permissions for SLS deployment
+# Record api endpoint
 npm install
 sls deploy
 ```
@@ -49,10 +51,10 @@ $ curl {you-endpoint}/stac/bounds?url=https://any-stac-item.json
   {"url": "https://any-file.on/the-internet.tif", "bounds": [90.47546096087822, 23.803014490532913, 90.48441996322644, 23.80577697976369]}
 ```
 
-### /stac/tile/z/x/y.png
+### /stac/tiles/z/x/y.png
 *Inputs:*
 - url: any valid url
-- asset_key: asset key from STAC_ITEM : default = segmentation_mask
+- asset_key: asset key from STAC_ITEM : default = raster
 *Options:*
 - rgb: select bands indexes to return (e.g: (1,2,3), (4,1,2))
 - nodata: nodata value to create mask
@@ -70,7 +72,7 @@ $ curl {you-endpoint}/stac/tiles/7/10/10.png?url=https://any-stac-item.json
 *Outputs:*
 - pixel_count:  Number of pixels of value out of 255
 - object_count: Number of objects after polygonization
-- sqkm:   sqkm of Object  
+
 
 *example:*
 ```
@@ -78,7 +80,6 @@ $ curl {you-endpoint}/stac/tiles/7/10/10.png?url=https://any-stac-item.json&asse
   { 
   "pixel_count": 555,
   "object_count": 1000,
-  "sqkm": 1234
   }
 ```
 

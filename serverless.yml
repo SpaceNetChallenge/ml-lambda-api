@@ -1,10 +1,9 @@
-service: lambda-tiler
+service: ml-lambda-api
 
 provider:
   name: aws
   runtime: python3.6
   stage: production
-
   region: ${opt:region, 'us-east-1'}
 
   environment:
@@ -14,8 +13,6 @@ provider:
     VSI_CACHE_SIZE: 536870912
     GDAL_DISABLE_READDIR_ON_OPEN: true
 
-  deploymentBucket: remotepixel-${self:provider.region}
-
 custom:
   apigwBinary:
     types:
@@ -23,6 +20,8 @@ custom:
 
 plugins:
   - serverless-apigw-binary
+  - serverless-offline
+
 
 package:
   artifact: package.zip
