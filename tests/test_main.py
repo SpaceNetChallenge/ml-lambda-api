@@ -2,8 +2,6 @@ import os
 import pytest
 ## Note, for mac osx compatability import something from shapely.geometry before importing fiona or geopandas
 ## https://github.com/Toblerity/Shapely/issues/553  * Import shapely before rasterio or fioana
-from shapely import geometry
-from rio_tiler import main
 import logging
 import requests
 from PIL import Image
