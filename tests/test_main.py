@@ -63,12 +63,12 @@ def test_stac_tiles():
                                                                                                 y=y_coord,
                                                                                                 stac_item_url=stac_item__url_mlexport))
 
-
     r = requests.get(api_location)
 
     if r.status_code==200:
         data = np.asarray(Image.open(BytesIO(r.content)))
     else:
+        print("API_LOCATION = {}".format(api_location))
         raise NameError("ML_LAMBDA_API_Endpoint_Endpoint stac_tile bad response")
 
 
@@ -99,6 +99,9 @@ def test_stac_summary():
     if r.status_code == 200:
         data = r.json()
     else:
+        print("Status Code = {}".format(r.status_code))
+        print("API_LOCATION = {}".format(api_location))
+
         raise NameError("ML_LAMBDA_API_Endpoint_Endpoint summary bad response")
 
     assert r.status_code == 200
