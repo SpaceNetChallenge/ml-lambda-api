@@ -21,7 +21,7 @@ install:
   - conda info -a
   - conda create --yes -n ml-export python=$TRAVIS_PYTHON_VERSION pip=18.1
   - source activate ml-export
-  - conda install -c conda-forge pytest nodejs requests numpy
+  - conda install -c conda-forge pytest nodejs requests numpy codecov
   - source activate ml-export & npm install -g serverless
   - source activate ml-export & make all
   - source activate ml-export & npm install
