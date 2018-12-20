@@ -1,5 +1,5 @@
 {
-    "name": "lambda-tiler",
+    "name": "ml-lambda-api",
     "version": "1.1.0",
     "description": "Create a highly customizable `serverless` tile server",
     "devDependencies": {
@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/vincentsarago/lambda-tiler.git"
+        "url": "git://github.com/spacenetchallenge/ml-lambda-api.git"
     },
-    "author": "Vincent Sarago"
+    "author": "David Lindenbaum, Nick Weir"
 }
